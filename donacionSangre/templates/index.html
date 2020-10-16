@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styl.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="header">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="../static/img/donation.png" alt="">
+            <h2>Insertar nombre original </h2>
+        </a>
+        <div class="toggle">
+            <ul class="sci">
+                <li>
+                    <a href="#">Home<img src="../static/img/home.png" alt="" class="icon">
+                        <span class="line2 active"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'requisito' %}">Requisitos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'rh' %}">Tipo de RH <img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'incentivo' %}">Incentivos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li><a href="{% url 'about' %}">Sobre nosotros <img src="../static/img/about.png" alt="" class="icon"> <span
+                            class="line2"></span></a> </li>
+                <li><a href="{% url 'login' %}">Login <img src="../static/img/user.png" alt="" class="icon"><span class="line2"></span> </a> </li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="Jumbotron">
+        <div class="title">
+            <H1>Donacion</H1>
+        </div>
+        <div class="wave"></div>
+    </section>
+    <section class="about">
+        <div class="contentAbout">
+            <h2 class="title_about">CAMPAÑAS</h2>
+            <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quam facere itaque ex
+                unde
+                perspiciatis molestias, dolorum odio optio magni! Facilis, praesentium saepe. Ipsam deserunt id
+                incidunt, possimus velit rerum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
+                nemo, aliquid eius porro illo nesciunt harum eveniet neque ea voluptas commodi repellat, corporis enim,
+                inventore illum adipisci voluptatem maiores.</p>
+            <a href="{% url 'campana' %}" class="btn">Mas</a>
+        </div>
+        <span class="line"></span>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127245.70462648068!2d-74.15978994920103!3d4.6954121175790515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bc7437d9dcd%3A0x75388ebeac6274f6!2sCruz%20Roja%20Colombiana%20Seccional%20Cundinamarca%20y%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1599414535454!5m2!1ses!2sco"
+                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
+    <section class="infHos">
+
+        <div class="map">
+            <img src="../static/img/hospital.jpg" alt="">
+        </div>
+        <span class="line"></span>
+        <div class="contentinf">
+            <h2 class="title_about">Hospitales</h2>
+            <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quam facere itaque ex
+                unde
+                perspiciatis molestias, dolorum odio optio magni! Facilis, praesentium saepe. Ipsam deserunt id
+                incidunt, possimus velit rerum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
+                nemo, aliquid eius porro illo nesciunt harum eveniet neque ea voluptas commodi repellat, corporis enim,
+                inventore illum adipisci voluptatem maiores.</p>
+            <a href="{% url 'hospital' %}" class="btn">Mas</a>
+        </div>
+
+    </section>
+    <section class="footer">
+        <ul class="sci">
+            <li><a href="#"><img src="../static/img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/instagram.png" alt=""></a></li>
+        </ul>
+        <h4>Copyright &copy;2020</h4>
+    </section>
+
+</body>
+
+</html>

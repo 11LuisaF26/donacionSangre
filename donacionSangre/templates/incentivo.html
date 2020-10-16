@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styl.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <title>Incentivos</title>
+</head>
+<body>
+    <section class="header">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="../static/img/donation.png" alt="">
+            <h2>Insertar nombre original</h2>
+        </a>
+        <div class="toggle">
+            <ul class="sci">
+                <li>
+                    <a href="{% url 'home' %}">Home<img src="../static/img/home.png" alt="" class="icon">
+                        <span class="line2 "></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'requisito' %}">Requisitos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'rh' %}">Tipo de RH <img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="">Incentivos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2 active"></span>
+                    </a> </li>
+                <li><a href="{% url 'about' %}">Sobre nosotros <img src="../static/img/about.png" alt="" class="icon"> <span
+                            class="line2"></span></a> </li>
+                <li><a href="{% url 'login' %}">Login <img src="../static/img/user.png" alt="" class="icon"><span class="line2"></span> </a> </li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="Jumbotron">
+        <div class="title">
+            <H1>Incentivos</H1>
+        </div>
+        <div class="wave"></div>
+    </section>
+    <section class="about">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre Incentivo</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Fecha valido</th>
+                    <th scope="col">Tipo de Incentivo</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for incentivo in incentivos %}
+                <tr> 
+                    <td>{{forloop.counter }}</td>
+                    <td>{{incentivo.nombre}} </td>
+                    <td>{{incentivo.empresa}} </td>
+                    <td>{{incentivo.fecha}} </td>
+                    <td>{{incentivo.tipo}} </td>
+                    <td>{{incentivo.celular}} </td>                    
+                    <td>{{incentivo.correo}} </td>
+                    <td>
+                        A
+                        
+                    </td>  
+                <tr>
+                  {% endfor %}                
+            </tbody>
+        </table>
+
+    </section>
+    <div class="container2_login">
+        <div class="content">
+            <div class="row100">
+                <div class="col">
+                    <a href="{% url 'registroIncentivo' %}">
+                        <input type="submit" value="Registrar nuevo Incentivo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="footer">
+        <ul class="sci">
+            <li><a href="#"><img src="../static/img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/instagram.png" alt=""></a></li>
+        </ul>
+        <h4>Copyright &copy;2020</h4>
+    </section>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styl.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <title>Hospitales</title>
+</head>
+
+<body>
+    <section class="header">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="../static/img/donation.png" alt="">
+            <h2>Bloove</h2>
+        </a>
+        <div class="toggle">
+            <ul class="sci">
+                <li>
+                    <a href="{% url 'home' %}">Home<img src="../static/img/home.png" alt="" class="icon">
+                        <span class="line2 "></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'requisito' %}">Requisitos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'rh' %}">Tipo de RH <img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'incentivo' %}">Incentivos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li><a href="{% url 'about' %}">Sobre nosotros <img src="../static/img/about.png" alt="" class="icon"> <span
+                            class="line2"></span></a> </li>
+                <li><a href="{% url 'login' %}">Login <img src="../static/img/user.png" alt="" class="icon"><span class="line2"></span> </a> </li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="Jumbotron">
+        <div class="title">
+            <H1>Hospitales</H1>
+        </div>
+        <div class="wave"></div>
+    </section>
+    <section class="about">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Hospital</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Ubicacion</th>
+                    <th scope="col">Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hospital in hospitales %}
+                <tr> 
+                    <td>{{forloop.counter }}</td>
+                    <td>{{hospital.nombre}} </td>
+                    <td>{{hospital.ciudad}} </td>                    
+                    <td>{{hospital.celular}} </td>
+                    <td>{{hospital.ubicacion}} </td>
+                    <td>{{hospital.correo}} </td>                    
+                    <td>
+                        A
+                        
+                    </td>  
+                <tr>
+                  {% endfor %}                
+            </tbody>
+        </table>
+
+    </section>
+    <div class="container2_login">
+        <div class="content">
+            <div class="row100">
+                <div class="col">
+                    <a href="{% url 'registroHospital' %}">
+                        <input type="submit" value="Registrar nuevo Hospital">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    
+    
+</body>
+<section class="footer">
+    <ul class="sci">
+        <li><a href="#"><img src="../static/img/facebook.png" alt=""></a></li>
+        <li><a href="#"><img src="../static/img/twitter.png" alt=""></a></li>
+        <li><a href="#"><img src="../static/img/instagram.png" alt=""></a></li>
+    </ul>
+    <h4>Copyright &copy;2020</h4>
+</section>
+
+</html>

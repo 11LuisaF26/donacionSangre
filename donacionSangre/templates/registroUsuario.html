@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/styl.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+</head>
+
+<body>
+    <section class="header">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="../static/img/donation.png" alt="">
+            <h2>Insertar nombre original</h2>
+        </a>
+        <div class="toggle">
+            <ul class="sci">
+                <li>
+                    <a href="{% url 'home' %}">Home<img src="../static/img/home.png" alt="" class="icon">
+                        <span class="line2 "></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'requisito' %}">Requisitos<img src="../static/img/campaigning.png" alt=""
+                            class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'rh' %}">Tipo de RH <img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'incentivo' %}">Incentivos<img src="../static/img/campaigning.png" alt=""
+                            class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li><a href="{% url 'about' %}">Sobre nosotros <img src="../static/img/about.png" alt="" class="icon">
+                        <span class="line2"></span></a> </li>
+                <li><a href="{% url 'login' %}">Login <img src="../static/img/user.png" alt="" class="icon"><span
+                            class="line2"></span> </a> </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <div class="container2_login">
+        <div class="content plus">
+            <h2>Registro</h2>
+            <!--CUESTIONARIO-->
+            <span class="mb-0 text-muted">
+                {% if msg %}
+                    {{ msg | safe }}
+                {% else %}
+                    Agrega tus credenciales
+                {% endif %} 
+            </span>
+            {% if not success %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="text" id="nombre" name="nombre" required="required" placeholder="Nombre" data-constraints="@Required"> {{form.name}}
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="text" id="apellido" name="apellido"  required="required" placeholder="Apellido" data-constraints="@Required"{{form.apellido}}>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <Select id="documento" name="documento" data-constraints="@Required"{{form.documento}}>
+                                <option value="">Documento de indentificacion</option>
+                                <option value="CC">CC</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                                <option value="TI">TI</option>
+                            </Select>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="number" id="numDocumento" name="numDocumento"  required="required" placeholder="N° indentificacion" data-constraints="@Required"{{form.numDocumento}}>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <Select id="grupo" name="grupo" data-constraints="@Required"{{form.grupo}}>
+                                <option value="">Grupo sanguineo</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="O">O</option>
+                                <option value="O">AB</option>
+                            </Select>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="inputBox">
+
+                            <Select id="rh" name="rh" data-constraints="@Required"{{form.rh}}>
+                                <option value="RH">RH</option>
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                            </Select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input id="fecha" name="fecha"  class="input100" type="date" 
+                                placeholder="Fecha de Nacimiento del Titular" data-constraints="@Required"{{form.fecha}}>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="inputBox">
+
+                            <Select class="myselect" id="genero" name="genero" data-constraints="@Required"{{form.genero}}>
+                                <option value="">Genero</option>
+                                <option value="M">M</option>
+                                <option value="F">F</option>
+                                <option value="Otro">Otro</option>
+                            </Select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input id="ciudad" name="ciudad"  type="text" required="required" placeholder="Ciudad donde vives" data-constraints="@Required"{{form.ciudad}}>
+
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="inputBox">
+                            <input type="number" id="celular" name="celular"  required="required" placeholder="Celular" data-constraints="@Required"{{form.celular}}>
+
+                            <span class="line"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="email" id="correo" name="correo"  required="required" placeholder="Correo electronico" data-constraints="@Required"{{form.correo}}>
+
+                            <span class="line"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="password" id="contrasena" name="contrasena"  required="required" placeholder="contrasena" data-constraints="@Required"{{form.contrasena}}>
+
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="inputBox">
+                            <input type="password" id="confirmar" name="confirmar" required="required" placeholder="Confirmar contrasena" data-constraints="@Required"{{form.confirmar}}>
+
+                            <span class="line"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <a href="{%url 'menu'%}">
+                            <input type="submit" value="Enviar">
+                        </a>
+
+                    </div>
+                </div>
+            </form>
+            {% endif %}
+            <!--FIN CUESTIONARIO-->
+        </div>
+    </div>
+    <section class="footer">
+        <ul class="sci">
+            <li><a href="#"><img src="../static/img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/instagram.png" alt=""></a></li>
+        </ul>
+        <h4>Copyright &copy;2020</h4>
+    </section>
+    <script>
+        window.addEventListener('load', function () {
+
+            document.getElementById('fecha').type = 'text';
+            document.getElementById('fecha').style = 'border-bottom: 2px  solid #f01706; ';
+            document.getElementById('fecha').addEventListener('blur', function () {
+                document.getElementById('fecha').style = 'border-bottom: 2px  solid #f01706; ';
+                document.getElementById('fecha').type = 'text';
+
+
+            });
+
+            document.getElementById('fecha').addEventListener('focus', function () {
+
+                document.getElementById('fecha').type = 'date';
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

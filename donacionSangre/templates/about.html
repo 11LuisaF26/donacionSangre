@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styl.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="header">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="../static/img/donation.png" alt="">
+            <h2>Insertar nombre original</h2>
+        </a>
+        <div class="toggle">
+            <ul class="sci">
+                <li>
+                    <a href="{% url 'home' %}">Home<img src="../static/img/home.png" alt="" class="icon">
+                        <span class="line2 "></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'requisito' %}">Requisitos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'rh' %}">Tipo de RH <img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'incentivo' %}">Incentivos<img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li><a href="">Sobre nosotros <img src="../static/img/about.png" alt="" class="icon"> <span
+                            class="line2 active"></span></a> </li>
+                <li><a href="{% url 'login' %}">Login <img src="../static/img/user.png" alt="" class="icon"><span class="line2"></span> </a> </li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="Jumbotron">
+        <div class="title">
+            <H1>Sobre nosotros</H1>
+        </div>
+        <div class="wave"></div>
+    </section>
+    <section class="infHos">
+        <div class="map">
+            <img src="../static/img/hospital.jpg" alt="">
+        </div>
+        <span class="line"></span>
+        <div class="contentinf">
+            <h2 class="title_about">Quienes somos</h2>
+            <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quam facere itaque ex
+                unde
+                perspiciatis molestias, dolorum odio optio magni! Facilis, praesentium saepe. Ipsam deserunt id
+                incidunt, possimus velit rerum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
+                nemo, aliquid eius porro illo nesciunt harum eveniet neque ea voluptas commodi repellat, corporis enim,
+                inventore illum adipisci voluptatem maiores.</p>
+        </div>
+
+    </section>
+    <Section class="Make">
+        <h2 class="title2">¿Que Hacemos?</h2>
+        <div class="content">
+            <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate illum officiis
+                vel laborum
+                impedit odio nesciunt, dolores quia optio, similique exercitationem vero nihil saepe ipsum praesentium
+                nostrum earum cumque!Lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt dolorum
+                doloremque aliquid doloribus minima architecto soluta iste? Eligendi, natus laboriosam nisi itaque
+                repellat distinctio reprehenderit, sit dolorum nesciunt iste magnam! Lorem ipsum dolor sit, amet
+                consectetur adipisicing elit. Laborum id distinctio aperiam molestiae dolorem, provident facere totam
+                molestias vitae eum! Voluptates sit suscipit nam repellendus fuga ducimus accusamus, facere veniam.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui laborum blanditiis sed, obcaecati
+                consectetur, error neque dicta totam magni exercitationem quae, impedit aspernatur molestias modi nemo
+                vel quos itaque. Officiis!</p>
+        </div>
+    </Section>
+    <section class="Testimonial">
+        <h2 class="title">Testimonios</h2>
+        
+        <div class="testimonials">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer"></div>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id doloribus vero laboriosam, incidunt sunt numquam optio dicta maiores ut debitis voluptates consequuntur error eaque deleniti quae, itaque eius, nemo minima?</p>
+                                <div class="imgBx">
+                                    <img src="../static/img/pexels-uncoveredlens-5251197.jpg" width="100px" alt="">
+                                </div>
+                                <div class="details">
+                                    <h2>Donante<br> <span>Ingeniera</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer"></div>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id doloribus vero laboriosam, incidunt sunt numquam optio dicta maiores ut debitis voluptates consequuntur error eaque deleniti quae, itaque eius, nemo minima?</p>
+                                <div class="imgBx">
+                                    <img src="../static/img/pexels-francesca-zama-5207248.jpg" width="100px" alt="">
+                                </div>
+                                <div class="details">
+                                    <h2>Donante<br> <span>Veterinaria</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer"></div>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id doloribus vero laboriosam, incidunt sunt numquam optio dicta maiores ut debitis voluptates consequuntur error eaque deleniti quae, itaque eius, nemo minima?</p>
+                                <div class="imgBx">
+                                    <img src="../static/img/pexels-anna-shvets-4225880.jpg" width="100px" alt="">
+                                </div>
+                                <div class="details">
+                                    <h2>Doctora<br> <span>Cirujana</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer"></div>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id doloribus vero laboriosam, incidunt sunt numquam optio dicta maiores ut debitis voluptates consequuntur error eaque deleniti quae, itaque eius, nemo minima?</p>
+                                <div class="imgBx">
+                                    <img src="../static/img/pexels-wallace-chuck-4726898.jpg" width="100px" alt="">
+                                </div>
+                                <div class="details">
+                                    <h2>Donante<br> <span>Diseñador</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer"></div>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id doloribus vero laboriosam, incidunt sunt numquam optio dicta maiores ut debitis voluptates consequuntur error eaque deleniti quae, itaque eius, nemo minima?</p>
+                                <div class="imgBx">
+                                    <img src="../static/img/pexels-linkedin-sales-navigator-2182979.jpg" width="100px" alt="">
+                                </div>
+                                <div class="details">
+                                    <h2>Doctor<br> <span>Cirujano</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer"></div>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id doloribus vero laboriosam, incidunt sunt numquam optio dicta maiores ut debitis voluptates consequuntur error eaque deleniti quae, itaque eius, nemo minima?</p>
+                                <div class="imgBx">
+                                    <img src="../static/img/pexels-creation-hill-1681010.jpg" width="100px" alt="">
+                                </div>
+                                <div class="details">
+                                    <h2>Donante<br> <span>Biologo</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <ul class="sci">
+            <li><a href="#"><img src="../static/img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/instagram.png" alt=""></a></li>
+        </ul>
+        <h4>Copyright &copy;2020</h4>
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 0,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop:true,
+        });
+    </script>
+</body>
+
+</html>

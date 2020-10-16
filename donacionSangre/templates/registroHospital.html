@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/styl.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+</head>
+
+<body>
+    <section class="header">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="../static/img/donation.png" alt="">
+            <h2>Insertar nombre original</h2>
+        </a>
+        <div class="toggle">
+            <ul class="sci">
+                <li>
+                    <a href="{% url 'home' %}">Home<img src="../static/img/home.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'requisito' %}">Requisitos<img src="../static/img/campaigning.png" alt=""
+                            class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'rh' %}">Tipo de RH <img src="../static/img/campaigning.png" alt="" class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li>
+                    <a href="{% url 'incentivo' %}">Incentivos<img src="../static/img/campaigning.png" alt=""
+                            class="icon">
+                        <span class="line2"></span>
+                    </a> </li>
+                <li><a href="{% url 'about' %}">Sobre nosotros <img src="../static/img/about.png" alt="" class="icon">
+                        <span class="line2"></span></a> </li>
+                <li><a href="{% url 'login' %}">Login <img src="../static/img/user.png" alt="" class="icon"><span
+                            class="line2"></span> </a> </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <div class="container2_login">
+        <div class="content plus">
+            <h2>Registro Hospital</h2>
+            <!--CUESTIONARIO-->
+
+            <form action="" method="POST">
+                {% csrf_token %} 
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="text" required="required" id="nombre" name="nombre" placeholder="Nombre del hospital" data-constraints="@Required"{{form.nombre}}
+
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="inputBox">
+                            <input type="text" id="ciudad" name="ciudad" required="required" placeholder="Ciudad" data-constraints="@Required"{{form.ciudad}}
+
+                            <span class="line"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="number" id="celular" name="celular" required="required" placeholder="Celular" data-constraints="@Required"{{form.celular}}
+
+                            <span class="line"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+
+                        <div class="inputBox">
+                            <input type="text" id="ubicacion" name="ubicacion" required="required" placeholder="Ubicacion" data-constraints="@Required"{{form.ubicacion}}
+
+                            <span class="line"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row100">
+                    <div class="col">
+                        <div class="inputBox">
+                            <input type="email" id="correo" name="correo" required="required" placeholder="Correo electronico para contactar" data-constraints="@Required"{{form.correo}}
+
+                            <span class="line"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row100">
+                    <div class="col">                        
+                            <input type="submit" value="Enviar">
+                    </div>
+                </div>
+            </form>
+            <!--FIN CUESTIONARIO-->
+        </div>
+    </div>
+    <section class="footer">
+        <ul class="sci">
+            <li><a href="#"><img src="../static/img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="../static/img/instagram.png" alt=""></a></li>
+        </ul>
+        <h4>Copyright &copy;2020</h4>
+    </section>
+</body>
+
+</html>
