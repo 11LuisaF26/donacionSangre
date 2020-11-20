@@ -99,4 +99,12 @@ def login(request):
 class campanaViewSet(viewsets.ModelViewSet):
      queryset = campana.objects.all()
      serializer_class = campanaSerializers
+
+class hospitalViewSet(viewsets.ModelViewSet):
+     queryset = hospital.objects.all()
+     serializer_class = hospitalSerializers
+
+class incentivoViewSet(viewsets.ModelViewSet):
+     queryset = incentivo.objects.all()
+     serializer_class = incentivoSerializers
  

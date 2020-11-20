@@ -6,6 +6,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('campana', campanaViewSet)
+router.register('hospital', hospitalViewSet)
+router.register('incentivo', incentivoViewSet)
 
 urlpatterns = [
 
