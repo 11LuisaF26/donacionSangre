@@ -1,7 +1,15 @@
-from django.urls import path, re_path
+from django.contrib import admin
+from django.urls import path, re_path, include
 from app import views
+from .views import *
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('campana', campanaViewSet)
 
 urlpatterns = [
+
+    path('api/',include(router.urls)),
 
     #index
     path('', views.index, name='home'),

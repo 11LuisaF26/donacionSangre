@@ -11,6 +11,8 @@ from django.urls import reverse
 from django.core.exceptions import PermissionDenied
 from .models import *
 from .forms import *
+from .serializers import *
+from rest_framework import viewsets
 
 # Create your views here.
 
@@ -92,5 +94,9 @@ def registroUsuario(request):
 def login(request):
     return render(request,"login.html")
 
- #Eliminar
+ # API's
+
+class campanaViewSet(viewsets.ModelViewSet):
+     queryset = campana.objects.all()
+     serializer_class = campanaSerializers
  
