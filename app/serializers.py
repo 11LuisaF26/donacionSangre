@@ -18,3 +18,10 @@ class incentivoSerializers(serializers.ModelSerializer):
         model=incentivo
         fields =('nombre', 'empresa','fecha','tipo','celular','correo')
 
+
+class datos_usuarioSerializers(serializers.ModelSerializer):
+    class Meta:
+        model=datos_usuario
+        fields =('username','documento','numDocumento','grupo','rh','fecha','genero','ciudad','celular')
+
+

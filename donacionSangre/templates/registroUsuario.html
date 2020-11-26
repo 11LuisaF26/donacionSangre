@@ -13,7 +13,7 @@
     <section class="header">
         <a href="{% url 'home' %}" class="logo">
             <img src="../static/img/donation.png" alt="">
-            <h2>Insertar nombre original</h2>
+            <h2>Bloove</h2>
         </a>
         <div class="toggle">
             <ul class="sci">
@@ -58,135 +58,59 @@
             {% if not success %}
             <form action="" method="post">
                 {% csrf_token %}
-                <div class="row100">
-                    <div class="col">
-                        <div class="inputBox">
-                            <input type="text" id="nombre" name="nombre" required="required" placeholder="Nombre" data-constraints="@Required"> {{form.name}}
-                            <span class="line"></span>
-                        </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="feather icon-user"></i></span>
                     </div>
-                    <div class="col">
-                        <div class="inputBox">
-                            <input type="text" id="apellido" name="apellido"  required="required" placeholder="Apellido" data-constraints="@Required"{{form.apellido}}>
-                            <span class="line"></span>
-                        </div>
+                    {{ form.name }}
+                </div>
+                <span class="text-error">{{ form.name.errors }}</span>
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="feather icon-user"></i></span>
                     </div>
+                    {{ form.last_name }}
+                </div>
+                <span class="text-error">{{ form.last_name.errors }}</span>
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="feather icon-user"></i></span>
+                    </div>
+                    {{ form.username }}
+                </div>
+                <span class="text-error">{{ form.username.errors }}</span>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="feather icon-mail"></i></span>
+                    </div>
+                    {{ form.email }}
+                </div>
+                <span class="text-error">{{ form.email.errors }}</span>
+
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="feather icon-lock"></i></span>
+                    </div>
+                    {{ form.password1 }}
+                </div>
+                <span class="text-error">{{ form.password1.errors }}</span>
+
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="feather icon-lock"></i></span>
+                    </div>
+                    {{ form.password2 }}
+                </div>
+                <span class="text-error">{{ form.password2.errors }}</span>                
                 </div>
                 <div class="row100">
-                    <div class="col">
-                        <div class="inputBox">
-                            <Select id="documento" name="documento" data-constraints="@Required"{{form.documento}}>
-                                <option value="">Documento de indentificacion</option>
-                                <option value="CC">CC</option>
-                                <option value="Pasaporte">Pasaporte</option>
-                                <option value="TI">TI</option>
-                            </Select>
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="inputBox">
-                            <input type="number" id="numDocumento" name="numDocumento"  required="required" placeholder="N° indentificacion" data-constraints="@Required"{{form.numDocumento}}>
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row100">
-                    <div class="col">
-                        <div class="inputBox">
-                            <Select id="grupo" name="grupo" data-constraints="@Required"{{form.grupo}}>
-                                <option value="">Grupo sanguineo</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="O">O</option>
-                                <option value="O">AB</option>
-                            </Select>
-                        </div>
-                    </div>
-                    <div class="col">
-
-                        <div class="inputBox">
-
-                            <Select id="rh" name="rh" data-constraints="@Required"{{form.rh}}>
-                                <option value="RH">RH</option>
-                                <option value="+">+</option>
-                                <option value="-">-</option>
-                            </Select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row100">
-                    <div class="col">
-                        <div class="inputBox">
-                            <input id="fecha" name="fecha"  class="input100" type="date" 
-                                placeholder="Fecha de Nacimiento del Titular" data-constraints="@Required"{{form.fecha}}>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="inputBox">
-
-                            <Select class="myselect" id="genero" name="genero" data-constraints="@Required"{{form.genero}}>
-                                <option value="">Genero</option>
-                                <option value="M">M</option>
-                                <option value="F">F</option>
-                                <option value="Otro">Otro</option>
-                            </Select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row100">
-                    <div class="col">
-                        <div class="inputBox">
-                            <input id="ciudad" name="ciudad"  type="text" required="required" placeholder="Ciudad donde vives" data-constraints="@Required"{{form.ciudad}}>
-
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                    <div class="col">
-
-                        <div class="inputBox">
-                            <input type="number" id="celular" name="celular"  required="required" placeholder="Celular" data-constraints="@Required"{{form.celular}}>
-
-                            <span class="line"></span>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row100">
-                    <div class="col">
-                        <div class="inputBox">
-                            <input type="email" id="correo" name="correo"  required="required" placeholder="Correo electronico" data-constraints="@Required"{{form.correo}}>
-
-                            <span class="line"></span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row100">
-                    <div class="col">
-                        <div class="inputBox">
-                            <input type="password" id="contrasena" name="contrasena"  required="required" placeholder="contrasena" data-constraints="@Required"{{form.contrasena}}>
-
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                    <div class="col">
-
-                        <div class="inputBox">
-                            <input type="password" id="confirmar" name="confirmar" required="required" placeholder="Confirmar contrasena" data-constraints="@Required"{{form.confirmar}}>
-
-                            <span class="line"></span>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row100">
-                    <div class="col">
-                        <a href="{%url 'menu'%}">
-                            <input type="submit" value="Enviar">
-                        </a>
+                    <div class="col" href="{% url 'datos' %}">
+                        <button type="submit" name="register" class="btn btn-primary btn-block mb-4">Registrarme</button>
 
                     </div>
                 </div>
@@ -226,3 +150,4 @@
 </body>
 
 </html>
+

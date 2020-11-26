@@ -79,16 +79,17 @@ def registroIncentivo(request):
             form = incentivo_form()
     return render(request,"registroIncentivo.html",{"form": form})
 
-def registroUsuario(request):
-    form = usuario_form()
+def registroDatos(request):
+    form = datos_usuario_form()
     if request.method == 'POST': # si el usuario está enviando el formulario con datos
-        form = usuario_form(request.POST) # Bound form
+        form = datos_usuario_form(request.POST) # Bound form
         if form.is_valid():
-            new_usuario = form.save() # Guardar los datos en la base de datos                              
+            new_datos = form.save() # Guardar los datos en la base de datos                              
             
         else:
-            form = usuario_form()
-    return render(request,"registroUsuario.html",{"form": form})
+            form = datos_usuario_form()
+    return render(request,"registroDatos.html",{"form": form})
+
 
 # NO SE :v
 def login(request):
@@ -107,4 +108,8 @@ class hospitalViewSet(viewsets.ModelViewSet):
 class incentivoViewSet(viewsets.ModelViewSet):
      queryset = incentivo.objects.all()
      serializer_class = incentivoSerializers
+
+class datos_usuarioViewSet(viewsets.ModelViewSet):
+     queryset = datos_usuario.objects.all()
+     serializer_class = datos_usuarioSerializers
  

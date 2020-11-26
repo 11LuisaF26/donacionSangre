@@ -21,7 +21,7 @@ class incentivo_form(ModelForm):
         fields =('nombre', 'empresa','fecha','tipo','celular','correo')
 
 
-class usuario_form(ModelForm): 
+class datos_usuario_form(ModelForm): 
     class Meta():
-        model = usuario
-        fields =('nombre', 'apellido','documento','numDocumento','grupo','rh','fecha','genero','ciudad','celular','correo','contrasena','confirmar')
+        model = datos_usuario
+        fields =('username','documento','numDocumento','grupo','rh','fecha','genero','ciudad','celular')

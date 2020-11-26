@@ -5,4 +5,4 @@ from .models import *
 admin.site.register(campana)
 admin.site.register(hospital)
 admin.site.register(incentivo)
-admin.site.register(usuario)
+admin.site.register(datos_usuario)

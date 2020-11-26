@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class campana(models.Model):
@@ -49,9 +50,8 @@ class incentivo(models.Model):
         return self.nombre
         
 
-class usuario(models.Model):
-    nombre = models.CharField(blank=True, max_length=100, verbose_name='nombre')
-    apellido = models.CharField(blank=True, max_length=100, verbose_name='apellido')
+class datos_usuario(models.Model):
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     documento = models.CharField(blank=True, max_length=100, verbose_name='documento')
     numDocumento = models.IntegerField(blank=True, verbose_name='numDocumento')
     grupo = models.CharField(blank=True, max_length=100, verbose_name='grupo')
@@ -60,13 +60,10 @@ class usuario(models.Model):
     genero = models.CharField(blank=True, max_length=100, verbose_name='genero')
     ciudad = models.CharField(blank=True, max_length=100, verbose_name='ciudad')
     celular = models.IntegerField(blank=True, verbose_name='celular')
-    correo = models.CharField(blank=True, max_length=100, verbose_name='correo')
-    contrasena = models.CharField(blank=True, max_length=100, verbose_name='contrasena')
-    confirmar = models.CharField(blank=True, max_length=100, verbose_name='confirmar')
 
     class Meta():
-        verbose_name = "usuario"
-        verbose_name_plural = "usuarios"
+        verbose_name = "datos_usuario"
+        verbose_name_plural = "datos_usuarios"
 
     def __str__(self):
-        return self.nombre
+        return self.grupo

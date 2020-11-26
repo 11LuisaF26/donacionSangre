@@ -1,9 +1,3 @@
-# -*- encoding: utf-8 -*-
-"""
-MIT License
-Copyright (c) 2019 - present AppSeed.us
-"""
-
 from django.shortcuts import render
 
 # Create your views here.
@@ -13,6 +7,8 @@ from django.contrib.auth.models import User, Group
 from django.forms.utils import ErrorList
 from django.http import HttpResponse
 from .forms import LoginForm, SignUpForm
+from rest_framework import viewsets
+from .serializers import *
 
 def login_view(request):
     form = LoginForm(request.POST or None)
@@ -27,16 +23,15 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("menu")
+                return redirect("/menu")
             else:    
                 msg = 'Credenciales Invalidas'    
         else:
-            msg = 'Error validando el formulario'    
+            msg = 'Error validando el formulario'  
 
     return render(request, "login.html", {"form": form, "msg" : msg})
 
 def register_user(request):
-
     msg     = None
     success = False
 
@@ -45,10 +40,9 @@ def register_user(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get("username")
-            raw_password = form.cleaned_data.get("password1")   
-            group = Group.objects.get(name='Cliente')                     
+            raw_password = form.cleaned_data.get("password1")                                  
             user = authenticate(username=username, password=raw_password)
-            user.groups.add(group)
+            
 
             msg     = 'Usuario creado - por favor <a href="/login">ingresa</a>.'
             success = True
@@ -59,5 +53,10 @@ def register_user(request):
             msg = 'El formulario no es valido'    
     else:
         form = SignUpForm()
-
+        
     return render(request, "registroUsuario.html", {"form": form, "msg" : msg, "success" : success })
+
+# API's
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = usuariosSerializers
