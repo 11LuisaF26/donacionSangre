@@ -23,7 +23,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("/menu")
+                return redirect("http://localhost:3000/menu")
             else:    
                 msg = 'Credenciales Invalidas'    
         else:
@@ -47,7 +47,7 @@ def register_user(request):
             msg     = 'Usuario creado - por favor <a href="/login">ingresa</a>.'
             success = True
             
-            #return redirect("/login/")
+            return redirect("/login/")
 
         else:
             msg = 'El formulario no es valido'    

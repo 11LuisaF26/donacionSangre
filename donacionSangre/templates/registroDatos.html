@@ -7,42 +7,57 @@
     <title>Document</title>
     <link rel="stylesheet" href="../static/css/styl.css">
     <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
 </head>
 
 <body>
-    <section class="header">
-        <a href="{% url 'home' %}" class="logo">
-            <img src="../static/img/donation.png" alt="">
-            <h2>Bloove</h2>
-        </a>
-        <div class="toggle">
-            <ul class="sci">
-                <li>
-                    <a href="{% url 'home' %}">Home<img src="../static/img/home.png" alt="" class="icon">
-                        <span class="line2 "></span>
-                    </a> </li>
-                <li>
-                    <a href="{% url 'requisito' %}">Requisitos<img src="../static/img/campaigning.png" alt=""
-                            class="icon">
-                        <span class="line2"></span>
-                    </a> </li>
-                <li>
-                    <a href="{% url 'rh' %}">Tipo de RH <img src="../static/img/campaigning.png" alt="" class="icon">
-                        <span class="line2"></span>
-                    </a> </li>
-                <li>
-                    <a href="{% url 'incentivo' %}">Incentivos<img src="../static/img/campaigning.png" alt=""
-                            class="icon">
-                        <span class="line2"></span>
-                    </a> </li>
-                <li><a href="{% url 'about' %}">Sobre nosotros <img src="../static/img/about.png" alt="" class="icon">
-                        <span class="line2"></span></a> </li>
-                <li><a href="{% url 'login' %}">Login <img src="../static/img/user.png" alt="" class="icon"><span
-                            class="line2"></span> </a> </li>
+    <div class="navbar">
+        <div class="navbar-container container_navbar">
+            <a href="/" class="navbar-logo" onClick={closeMobileMenu}>
+                Bloove
+            </a>
+            <div class="menu-icon" onClick={handleCLick}>
+            </div>
+            <ul class='nav-menu'>
 
+                <li class='nav-item'>
+                    <a href='http://localhost:3000' class='nav-links' onClick={closeMobileMenu}>
+                        Home
+                    </a>
+                </li>
+                <li class='nav-item'>
+                    <a href='http://localhost:3000/requisitos' class='nav-links' onClick={closeMobileMenu}>
+                        Requisitos
+                    </a>
+                </li>
+
+                <li class='nav-item'>
+                    <a href='http://localhost:3000/rh' class='nav-links' onClick={closeMobileMenu}>
+                        Tipos de RH
+                    </a>
+                </li>
+                <li class='nav-item'>
+                    <a href='http://localhost:3000/incentivos' class='nav-links' onClick={closeMobileMenu}>
+                        Incentivos
+                    </a>
+
+                </li>
+                <li class='nav-item'>
+                    <a href='http://localhost:3000/about' class='nav-links' onClick={closeMobileMenu}>
+                        Sobre nosotros
+                    </a>
+
+                </li>
+                <li class='nav-item'>
+                    <a href='http://127.0.0.1:8000/login/' class='nav-links' onClick={closeMobileMenu}>
+                        login
+                    </a>
+
+                </li>
             </ul>
+
         </div>
-    </section>
+    </div>
 
     <div class="container2_login">
         <div class="content plus">

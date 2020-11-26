@@ -1,14 +1,15 @@
 from django.contrib import admin
 from django.urls import path, re_path, include
 from app import views
-from .views import *
+from .views import campanaViewSet,hospitalViewSet,incentivoViewSet, datos_usuarioViewSet
 from rest_framework import routers
-
+from authentication.views import UserViewSet
 router = routers.DefaultRouter()
 router.register('campana', campanaViewSet)
 router.register('hospital', hospitalViewSet)
 router.register('incentivo', incentivoViewSet)
 router.register('datos', datos_usuarioViewSet)
+router.register('usuarios', UserViewSet)
 
 urlpatterns = [
 
